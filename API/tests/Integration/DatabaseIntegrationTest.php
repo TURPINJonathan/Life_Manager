@@ -1,7 +1,9 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+declare(strict_types=1);
+
 use Dotenv\Dotenv;
+use PHPUnit\Framework\TestCase;
 
 class DatabaseIntegrationTest extends TestCase
 {
