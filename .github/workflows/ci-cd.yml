@@ -9,15 +9,15 @@ on:
       - '**'
 
 jobs:
-  backend:
+  API:
     runs-on: ubuntu-latest
 
     services:
       mysql:
         image: mysql:5.7
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: Life_Manager
+          MYSQL_ROOT_PASSWORD: ${{ secrets.DB_PASS }}
+          MYSQL_DATABASE: ${{ secrets.DB_NAME }}
         ports:
           - 3306:3306
         options: >-
@@ -50,5 +50,3 @@ jobs:
     - name: Run tests
       working-directory: ./API
       run: make test-no-dox
-      env:
-          DATABASE_URL: "mysql://root:root@127.0.0.1:3306/Life_Manager"
