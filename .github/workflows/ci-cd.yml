@@ -36,17 +36,17 @@ jobs:
         php-version: '8.2'
 
     - name: Install dependencies
-      working-directory: ./back
+      working-directory: ./API
       run: composer install
 
     - name: Run PHPStan
-      working-directory: ./back
+      working-directory: ./API
       run: make stan
     
     - name: Run PHP-CS-Fixer
-      working-directory: ./back
+      working-directory: ./API
       run: make cs
     
     - name: Run tests
-      working-directory: ./back
+      working-directory: ./API
       run: make test-no-dox
